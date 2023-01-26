@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# script to print numbers with text
+
+COUNTER=1
+while [ $COUNTER -lt 21 ]
+do
+    case $COUNTER in
+
+	4) echo  $COUNTER
+	   echo "bad luck from China"
+	   ;;
+
+	9) echo $COUNTER
+	   echo "bad luck from Japan"
+	   ;;
+
+	17) echo $COUNTER
+	    echo "bad luck from Italy"
+	    ;;
+
+*)
+    echo $COUNTER
+    ;;
+
+    esac
+    ((COUNTER++))
+done
