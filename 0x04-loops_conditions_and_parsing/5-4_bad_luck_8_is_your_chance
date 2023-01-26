@@ -1,18 +1,17 @@
 #!/usr/bin/env bash
 # script to print message
 
-COUNTER=0
+COUNTER=1
 while [ $COUNTER -lt 11 ]
 do
-if [ $COUNTER = 4 ];
-then
-echo "bad luck"
-fi
-elif [ $COUNTER = 8 ]
-then
-echo "good luck"
-else
-echo "Best School"
-fi
-((COUNTER++))
+    if [ $COUNTER = 4 ];
+    then
+	echo "bad luck"
+    elif [ $COUNTER = 8 ];
+    then
+	echo "good luck"
+    else
+	echo "Best School"
+    fi
+    ((COUNTER++))
 done
