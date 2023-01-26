@@ -1,5 +1,19 @@
 #!/usr/bin/env bash
 # script to print fizzbuzz
 
-for((a=1; a <=101; a++))
+for((a=1; a <101; a++))
 do
+    if((a%15 == 0));
+    then
+	echo "FizzBuzz"
+    elif((a%3 == 0));
+    then
+	echo "Fizz"
+    elif((a%5 == 0));
+    then
+	echo "Buzz"
+    else
+	echo "$a"
+    fi
+done
+
