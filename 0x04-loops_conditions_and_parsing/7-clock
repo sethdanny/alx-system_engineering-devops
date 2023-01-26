@@ -2,15 +2,15 @@
 # script to print hour and minutes
 
 H=0
-M=1
-while [ $H -le 12 ];
+while [ $H -le 12 ]
 do
-    echo "Hour: "$H
-    while [ $M -le 59 ];
+    echo "Hour: $H"
+    (( H++ ))
+
+    M=1
+    while [ $M -le 59 ]
     do
-	echo $M
-	(( M++ ));
-    done;
-    (( m=1 ))
-    (( H++ ));
-done;
+	echo "$M"
+	(( M++ ))
+    done
+done
