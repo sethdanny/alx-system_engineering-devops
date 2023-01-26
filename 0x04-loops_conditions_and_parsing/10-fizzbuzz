@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# script to print fizzbuzz
+
+for((a=1; a <=101; a++))
+do
