@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Ascript to print a string if an if statement
 
-I=1
-while [ $I -le 10 ];
+I=0
+while [ $I -lt 11 ];
 do
     if [ $I = 9 ];
     then
