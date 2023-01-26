@@ -4,11 +4,11 @@
 I=1
 while [ $I -le 10 ];
 do
-if [ $I = 9 ];
-then
-echo "Hi"
-else
-echo "Best School"
-fi
-((I++))
+    if [ $I = 9 ];
+    then
+	echo "Hi"
+    else
+	echo "Best School"
+    fi
+    ((I++))
 done
