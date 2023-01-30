@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # display ip addresses and sort them
 
-awk '{print $1, $9}' apache-access.log file | sort
+awk '{print $1, $9}' apache-access.log file | sort | uniq -c | sort -rn
