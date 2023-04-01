@@ -35,3 +35,4 @@ let’s look at how to execute the file
 * [x] Shell Permissions
 * [x] Shell Redirections
 * [x] Shell Variables and Expansions
+# 0x0B-ssh
