@@ -4,17 +4,15 @@
 
 apt-get -y install haproxy
 
-sudo mv /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bak
-
-sudo touch /etc/haproxy/haproxy.cfg && sudo chmod 644 /etc/haproxy/haproxy.cfg
-
 server_config=\
 "
 frontend nadduli-alx-frontend
 	 bind *:80
 	 mode http
 	 default_backend nadduli-alx-backend
+
 backend nadduli-alx-backend
+	mode http
 	balance roundrobin
 	server 118325-web-01 54.172.81.125:80 check
 	server 118325-web-02 52.204.68.184:80 check
