@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+# Update package list and install Nginx
+sudo apt-get update
+sudo apt-get -y install nginx
+
+# Create a custom index page with "Hello World" message
+echo 'Hello World' | sudo tee /var/www/html/index.html > /dev/null
+
+# Create a custom 404 page
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html > /dev/null
+
+# Configure Nginx to listen on port 80, return custom index page and custom 404 page,
+# and redirect /redirect_me to a specific URL
+sudo tee /etc/nginx/sites-available/default > /dev/null <<EOF
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    root /var/www/html;
+    index index.html;
+
+    # Serve the custom 404 page
+    error_page 404 /404.html;
+    location = /404.html {
+        internal;
+    }
+
+    # Serve the custom index page
+    location / {
+        try_files \$uri \$uri/ =404;
+        add_header X-Served-By \$hostname;
+    }
+
+    # Redirect /redirect_me to a specific URL
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+}
+EOF
+
+# Reload Nginx configuration
+sudo systemctl reload nginx
