@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # Update the package list and install Nginx
-sudo apt-get update
-sudo apt-get -y install nginx
+apt-get -y update
+apt-get -y install nginx
 
 # Allow Nginx through the firewall
-sudo ufw allow 'Nginx HTTP'
+ufw allow 'Nginx HTTP'
 
 # Set permissions for the web root
 chmod -R 755 /var/www/html
