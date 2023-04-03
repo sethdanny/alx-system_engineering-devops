@@ -2,7 +2,7 @@
 # Install and configure HAproxy load balancer on my lb-01 server
 # Backup my default haproxy configuration file and create a new one with default configurations
 
-apt-get -y install haproxy
+sudo apt-get -y install haproxy
 
 server_config=\
 "
@@ -18,10 +18,10 @@ backend nadduli-alx-backend
 	server 118325-web-02 52.204.68.184:80 check
 "
 
-echo "$server_config" >> /etc/haproxy/haproxy.cfg
+sudo echo "$server_config" >> /etc/haproxy/haproxy.cfg
 
 #enable haproxy to be started by init script
 
-echo "ENABLED=1" >> /etc/default/haproxy
+sudo echo "ENABLED=1" >> /etc/default/haproxy
 
 sudo service haproxy restart
