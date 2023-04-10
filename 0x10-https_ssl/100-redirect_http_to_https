@@ -35,6 +35,7 @@ defaults
 frontend nadduli-alx-frontend
         bind *:80
 	bind *:443 ssl crt /etc/letsencrypt/live/www.naddulidan.tech/nadduli.pem
+	http-request redirect scheme https unless { ssl_fc }
 	mode http
         default_backend nadduli-alx-backend
 
