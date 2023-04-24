@@ -21,12 +21,12 @@ if __name__ == '__main__':
     emp_todos = res.json()
 
     with open(file_name, 'w') as csvfile:
-        for todo in emp_todos:
+        for item in emp_todos:
             total_todos += 1
             csvfile.write(
                     '"{}","{}","{}","{}"\n'.format(
-                                            todo.get('userId'),
+                                            item.get('userId'),
                                             emp_name,
-                                            todo.get('completed'),
-                                            todo.get('title')
+                                            item.get('completed'),
+                                            item.get('title')
                                             ))
