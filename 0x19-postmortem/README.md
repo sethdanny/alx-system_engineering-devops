@@ -1,4 +1,5 @@
-`# Nginx Server Postmortem Report`
+:---:
+# Nginx Server Postmortem Report
 ------------------------------------------
 
 ## Date: May 15, 2023
