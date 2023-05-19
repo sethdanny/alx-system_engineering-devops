@@ -12,23 +12,17 @@ This postmortem report provides an analysis of the incident that occurred on May
 
 3. Root Cause Analysis:
 * Root Cause: The incident was caused by a misconfiguration in the Nginx server's load balancing module, resulting in an overload of requests to a specific backend server.
-
 * Contributing factors: The misconfiguration was introduced during a recent server update, and it went unnoticed during the testing phase.
-
 * Impact analysis: The overload of requests led to increased response times and eventually caused the server to become unresponsive, resulting in the service outage
 
 4. Mitigation Steps:
 * Action 1: As soon as the incident was detected, the misconfiguration was identified and rectified by adjusting the load balancing configuration to evenly distribute the requests among backend servers.
-
 * Action 2: The Nginx server was restarted to apply the configuration changes and ensure all settings were properly applied.
-
 * Action 3: System monitoring and alerting were enhanced to detect any abnormal spikes in traffic or server load, allowing for quicker identification and mitigation of similar incidents in the future.
 
 5. Preventive Measures:
 * Measure 1: Implement a more rigorous testing and quality assurance process for server updates and configuration changes to catch misconfigurations before they are deployed to the production environment.
-
 * Measure 2: Implement automated configuration validation tools to perform sanity checks on the server's configuration before restarting it, reducing the risk of misconfigurations causing service disruptions.
-
 * Measure 3: Enhance the monitoring system to include real-time traffic analysis and load balancing metrics, enabling proactive identification and mitigation of potential overload situations.
 
 6. Lessons Learned:
@@ -37,4 +31,4 @@ This postmortem report provides an analysis of the incident that occurred on May
 * Lesson 3: Continuous improvement of monitoring and alerting systems is crucial to detect and respond promptly to abnormal traffic patterns or server behavior
 
 7. Conclusion:
-In conclusion, the incident involving the Nginx server on May 15, 2023, was caused by a misconfiguration in the load balancing module. The incident was swiftly mitigated by adjusting the configuration, restarting the server, and implementing improved monitoring practices. To prevent similar incidents in the future, we will focus on rigorous testing, automated configuration validation, and enhanced monitoring systems. By implementing these measures and incorporating the lessons learned, we aim to ensure the stability and availability of our Nginx server infrastructure.
+    In conclusion, the incident involving the Nginx server on May 15, 2023, was caused by a misconfiguration in the load balancing module. The incident was swiftly mitigated by adjusting the configuration, restarting the server, and implementing improved monitoring practices. To prevent similar incidents in the future, we will focus on rigorous testing, automated configuration validation, and enhanced monitoring systems. By implementing these measures and incorporating the lessons learned, we aim to ensure the stability and availability of our Nginx server infrastructure.
